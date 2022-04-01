@@ -43,7 +43,7 @@ describe '投稿のテスト' do
 
   describe '一覧画面のテスト' do
     before do
-      visit list_path
+      visit lists_path
     end
     context '一覧の表示とリンクの確認' do
       it '一覧表示画面に投稿されたもの表示されているか' do
@@ -76,12 +76,13 @@ describe '投稿のテスト' do
     context 'list削除のテスト' do
       it 'listの削除' do
         expect{ list.destroy }.to change{ List.count }.by(-1)
+      end
     end
   end
 
-  describe '' do
+  describe '編集画面のテスト' do
     before do
-      visit edit_path(list)
+      visit edit_list_path(list)
     end
     context "表示の確認" do
       it '編集前のタイトルと本文がフォームに表示(セット)されている' do

@@ -1,7 +1,0 @@
-%h1 編集画面
-= form_with model: @list, url: update_list_path(@list.id), method: :patch do |f|
-  %h4 タイトル
-  = f.text_field :title
-  %h4 本文
-  = f.text_area :body
-  = f.submit '保存'
